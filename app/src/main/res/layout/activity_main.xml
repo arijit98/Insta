@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="layoutClicked"
     tools:context=".LogIn">
 
     <EditText
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter your password"
-        android:inputType="textPassword|numberPassword"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtusername" />
@@ -36,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log In"
+        android:textColor="#009688"
         app:layout_constraintEnd_toEndOf="@+id/edtPassword"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
@@ -54,6 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#E91E63"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toEndOf="@+id/textView"
