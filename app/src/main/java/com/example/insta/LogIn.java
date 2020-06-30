@@ -59,6 +59,11 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         signUp.setOnClickListener(this);
         logIn.setOnClickListener(this);
 
+        if (ParseUser.getCurrentUser() != null) {
+            //ParseUser.getCurrentUser().logOut();
+            transitionToSocialMedia();
+        }
+
     }
 
     @Override
@@ -70,6 +75,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                     public void done(ParseUser user, ParseException e) {
                         if (user!=null && e==null){
                             Toast.makeText(LogIn.this,"Log in successful",Toast.LENGTH_SHORT).show();
+                            transitionToSocialMedia();
                         }
                         else{
                             Toast.makeText(LogIn.this,"Log in failed, please check your password",Toast.LENGTH_SHORT).show();
@@ -92,5 +98,10 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void transitionToSocialMedia(){
+        Intent intent= new Intent(LogIn.this,SocialMedia.class);
+        startActivity(intent);
     }
 }
