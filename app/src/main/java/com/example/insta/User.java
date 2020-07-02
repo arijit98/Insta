@@ -36,11 +36,10 @@ public class User extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_user, container, false);
-        view.findViewById(R.id.listView);
+        mListView=view.findViewById(R.id.listView);
         mArrayList=new ArrayList();
         mArrayAdapter= new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,mArrayList);
 
-        ParseUser parseUser = ParseUser.getCurrentUser();
         ParseQuery<ParseUser> parseQuery=ParseUser.getQuery();
         parseQuery.whereNotEqualTo("username",ParseUser.getCurrentUser().getUsername());
         parseQuery.findInBackground(new FindCallback<ParseUser>() {
